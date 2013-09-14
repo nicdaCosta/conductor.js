@@ -1,8 +1,10 @@
+var moduleUsed = ( 'AudioContext' in window || 'webkitAudioContext' in window ) ? 'webAudioAPI' : 'audioTag';
+
 require.config({
 	baseUrl: "js",
 	map: {
 		"soundEngine" : {
-			"soundElement" : "audioTag"
+			"soundElement" : moduleUsed
 		}
 	}
 });
